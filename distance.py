@@ -49,11 +49,11 @@ def recalculate_coordinate(val,  _as=None):
 def distance(start_long, end_long, start_lat, end_lat, metric=False):
   ''' Calculates distance (in miles by default) between (start lat, start long)
       and (end lat, end long) '''
-    dist_km = points2distance([(start_long,0,0),(start_lat, 0,0)],[(end_long,0,0),(end_lat,0,0)])
-    if metric:
-        return dist_km
-    else:
-        return dist_km * 0.621371
+  dist_km = points2distance([(start_long,0,0),(start_lat, 0,0)],[(end_long,0,0),(end_lat,0,0)])
+  if metric:
+      return dist_km
+  else:
+      return dist_km * 0.621371
   
 def points2distance(start,  end):  
   """ 
