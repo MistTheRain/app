@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Go take a hike.</h1>
+    <form method="post" action="{{ url_for('signup') }}">
+        <p><label>Where are you?:</label> <input type="text" name="location" required></p>
+        <p><label>How far do you want to travel? (in miles):</label> <textarea name="dist"></textarea></p>
+        <p><button type="submit">Send</button></p>
+    </form>
+{% endblock %}
