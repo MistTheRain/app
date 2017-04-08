@@ -13,14 +13,14 @@ def find_weather(lat, lon, api_key):
 
     # features that we want to grab from this data set
     description = pred['weather'][0]['description']
-    descript_id = pred['weather'][0]['id']  # use this to get the image for website of weather
+    icon_id = pred['weather'][0]['icon']  # use this to get the image for website of weather
     temp = pred['main']['temp']
     max_temp = pred['main']['temp_max']
     min_temp = pred['main']['temp_min']
     wind = pred['wind']
     humidity = pred['main']['humidity']
 
-    return description, descript_id, temp, max_temp, min_temp, wind, humidity
+    return description, icon_id, temp, max_temp, min_temp, wind, humidity
 
 def main():
     # lat/lon for testing
@@ -29,9 +29,8 @@ def main():
     #  openweathermap api key
     api_key = '201d8d3928b5f416ea976faa570d99c2'
 
-    description, descript_id, temp, max_temp, min_temp, wind, humidity = find_weather(lat, lon,
+    description, icon_id, temp, max_temp, min_temp, wind, humidity = find_weather(lat, lon,
                                                                                       api_key)
-
 
 if __name__ == '__main__':
     main()
