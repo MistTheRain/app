@@ -77,4 +77,3 @@ def points2distance(start,  end):
   c = 2 * math.asin(math.sqrt(a))  
   return 6371 * c  
   
-
