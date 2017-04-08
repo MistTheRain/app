@@ -8,7 +8,7 @@ This is a weather prediction app for rock climbing
 2. Clone you repo to your desctop
 git clone 
 2. set it up as a remote ex.
-git add remote upstream 
+git add remote upstream https://github.com/MistTheRain/app.git
 
 # push canges to local
 git push origin [branch]
