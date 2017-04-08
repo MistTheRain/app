@@ -19,8 +19,10 @@ def main():
 
     # get a list of locations within the certain range of location
     output_data = mist_the_rain.get_facilities(start_lat, start_lon, radius, rec_api_key, url)
+    output_data = mist_the_rain.weather_dict(output_data, owm_api_key)
     np.save('output.npy', output_data)
     pprint.pprint(output_data)
+
 
 if __name__ == '__main__':
     main()

@@ -60,7 +60,7 @@ def find_weather(lat, lon, api_key):
     temp = pred['main']['temp']
     max_temp = pred['main']['temp_max']
     min_temp = pred['main']['temp_min']
-    wind = pred['wind']
+    wind = pred['wind']['speed']
     humidity = pred['main']['humidity']
 
     return description, icon_id, temp, max_temp, min_temp, wind, humidity
@@ -72,3 +72,16 @@ def get_gps(start_loc):
     location1 = geolocator.geocode(start_loc)
 
     return location1.latitude, location1.longitude
+
+def weather_dict(output_data, api_key):
+    for i in range(len(output_data)):
+        description, icon_id, temp, max_temp, min_temp, wind, humidity = find_weather(output_data[i]['latitude'],
+                                                                                      output_data[i]['longitude'],
+                                                                                      api_key)
+        output_data[i]['icon_id'] = icon_id
+        output_data[i]['temp'] = temp
+        output_data[i]['description'] = description
+        output_data[i]['humidity'] = humidity
+        output_data[i]['wind speed'] = wind
+
+    return output_data
